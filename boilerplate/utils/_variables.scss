@@ -1,0 +1,16 @@
+@use 'SASS:map';
+
+@forward './breakpoints';
+@forward './colors';
+@forward './spacing';
+@forward './typography';
+
+// === Radius ===
+$radius: (
+  'base': 0.8rem,
+);
+
+// === Transitions ===
+$transitions: (
+  'default': all 300ms ease-in-out,
+);

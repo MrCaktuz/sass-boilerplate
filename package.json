@@ -1,0 +1,46 @@
+{
+  "name": "@mrcaktuz/sass-boilerplate",
+  "version": "1.0.1",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "author": "MrCaktuz",
+  "description": "This is a boilerplate kit for you sass project. It contains basics functions, mixins, variables and normalize to enable you to start from a strong and healthy base. The goal is to help you start not holding you back, please make it your own and customize it as much as you want.",
+  "keywords": [
+    "reset",
+    "normalize",
+    "css",
+    "sass",
+    "scss",
+    "boilerplate",
+    "starter",
+    "style",
+    "styles",
+    "theme",
+    "themes",
+    "mrcaktuz"
+  ],
+  "scripts": {
+    "format": "prettier --write 'boilerplate/**/*.scss'",
+    "lint": "stylelint 'boilerplate/**/*.scss' --fix",
+    "build": "sass boilerplate/global.scss dist/style.css --style=expanded",
+    "watch": "sass --watch boilerplate/global.scss:dist/style.css --style=expanded"
+  },
+  "bin": {
+    "create-sass-boilerplate": "index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^12.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "sass": "^1.86.0",
+    "stylelint": "^16.16.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.4"
+  }
+}

@@ -1,0 +1,68 @@
+@use './variables' as *;
+@use 'SASS:list';
+@use 'SASS:map';
+
+// === Variables ===
+@mixin set-variables($key, $array) {
+  @each $name, $value in $array {
+    @if $name == 'base' {
+      --#{$key}: #{$value};
+    } @else {
+      --#{$key}-#{$name}: #{$value};
+    }
+  }
+}
+
+// === Color theme ===
+@mixin set-colors-variables($key, $array) {
+  $theme-count: list.length($themes-enabled);
+
+  @if $theme-count <= 1 {
+    // Si un seul thème est activé, pas besoin d'encapsuler
+    $theme-name: list.nth($themes-enabled, 1);
+    color-scheme: #{$theme-name};
+    @each $color-name, $color-values in $array {
+      --#{$key}-#{$color-name}: #{map.get($color-values, $theme-name)};
+    }
+  } @else {
+    // Sinon, appliquer pour chaque thème activé
+    @each $theme-name in $themes-enabled {
+      &[data-theme='#{$theme-name}'] {
+        color-scheme: #{$theme-name};
+        @each $color-name, $color-values in $array {
+          --#{$key}-#{$color-name}: #{map.get($color-values, $theme-name)};
+        }
+      }
+    }
+  }
+}
+
+// === Title size ===
+@mixin set-title-sizes() {
+  @each $level, $config in $title-sizes {
+    #{$level},
+    .#{$level} {
+      font-size: clamp(
+        #{map.get($config, 'min')},
+        #{map.get($config, 'ratio')},
+        #{map.get($config, 'max')}
+      );
+    }
+  }
+}
+
+// === Media query ===
+@mixin mq($breakpoint) {
+  @if $breakpoint != 'xs' {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// === Mask ===
+@mixin base-mask() {
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
