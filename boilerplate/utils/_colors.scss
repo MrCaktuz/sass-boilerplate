@@ -1,69 +1,56 @@
 // === Colors ===
-// Greys
-$c-grey-0: hsl(0deg 0% 100% / 100%);
-$c-grey-1: hsl(0deg 0% 90% / 100%);
-$c-grey-2: hsl(0deg 0% 80% / 100%);
-$c-grey-3: hsl(0deg 0% 70% / 100%);
-$c-grey-4: hsl(0deg 0% 60% / 100%);
-$c-grey-5: hsl(0deg 0% 50% / 100%);
-$c-grey-6: hsl(0deg 0% 40% / 100%);
-$c-grey-7: hsl(0deg 0% 30% / 100%);
-$c-grey-8: hsl(0deg 0% 20% / 100%);
-$c-grey-9: hsl(0deg 0% 10% / 100%);
-$c-grey-10: hsl(0deg 0% 0% / 100%);
+$c-white: #FFFFFF;
+$c-white-porcelain: #EDF0F2;
+$c-grey-regent: #879BA6;
+$c-grey-river-bed: #455C63;
+$c-grey-limed-spruce: #37474F;
+$c-grey-outer-space: #263238;
+$c-black: #000000;
+$c-orange-ecstasy: #F58020;
+$c-blue-sail: #99DBF6;
 // Utils
 $c-green-fun: #005f30;
 $c-green-jade: #00ad57;
 $c-red-mexican: #a32929;
 $c-red-bittersweet: #ff6161;
-// Others
 
 // Theme
-$themes-enabled: (light, dark);
 $color-themes: (
-  'grey-0': (
-    light: $c-grey-0,
-    dark: $c-grey-10,
+  'white': (
+    light: $c-white,
+    dark: $c-black,
   ),
-  'grey-1': (
-    light: $c-grey-1,
-    dark: $c-grey-9,
+  'lighter': (
+    light: $c-white-porcelain,
+    dark: $c-grey-outer-space,
   ),
-  'grey-2': (
-    light: $c-grey-2,
-    dark: $c-grey-8,
+  'light': (
+    light: $c-grey-regent,
+    dark: $c-grey-limed-spruce,
   ),
-  'grey-3': (
-    light: $c-grey-3,
-    dark: $c-grey-7,
+  'base': (
+    light: $c-grey-river-bed,
+    dark: $c-grey-river-bed,
   ),
-  'grey-4': (
-    light: $c-grey-4,
-    dark: $c-grey-6,
+  'dark': (
+    light: $c-grey-limed-spruce,
+    dark: $c-grey-regent,
   ),
-  'grey-5': (
-    light: $c-grey-5,
-    dark: $c-grey-5,
+  'darker': (
+    light: $c-grey-outer-space,
+    dark: $c-white-porcelain,
   ),
-  'grey-6': (
-    light: $c-grey-6,
-    dark: $c-grey-4,
+  'black': (
+    light: $c-black,
+    dark: $c-white,
   ),
-  'grey-7': (
-    light: $c-grey-7,
-    dark: $c-grey-3,
+  'action': (
+    light: $c-orange-ecstasy,
+    dark: $c-orange-ecstasy,
   ),
-  'grey-8': (
-    light: $c-grey-8,
-    dark: $c-grey-2,
-  ),
-  'grey-9': (
-    light: $c-grey-9,
-    dark: $c-grey-1,
-  ),
-  'grey-10': (
-    light: $c-grey-10,
-    dark: $c-grey-0,
+  'accent': (
+    light: $c-blue-sail,
+    dark: $c-blue-sail,
   ),
   'success': (
     light: $c-green-fun,

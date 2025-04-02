@@ -7,7 +7,7 @@ This is a boilerplate for you sass project. It contains basics mixins, variables
 From the folder you want to add you SASS project run this command to create the boilerplate files.
 
 ```
-npx create-sass-boilerplate
+npx @mrcaktuz/sass-boilerplate
 ```
 
 Once done, I strongly recommend you to change things around and make it you own.
@@ -28,7 +28,13 @@ It's then set to `1.6rem` on the `body` to have a default font size of 16px as u
 
 ### Color theme setup
 
-Colors variables and mixin are setup to enable the use of dark and light theme with the use of the attribute `data-theme` on your `<html>` tag. In case you don't want this feature feel free to leave one value in the variable `$themes-enabled`.
+Colors variables and mixin are setup to enable the use of dark and light theme with the use of the attribute `data-theme` on your `<html>` tag or the user `prefers-color-scheme` from the browser. In case you don't want this feature feel free to set a value directly in the `$color-themes` list instead of a map like so :
+``` SCSS
+$color-themes: (
+  'white': $c-white,
+  'dark': $c-black,
+)
+```
 
 ### What else ?
 
