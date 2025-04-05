@@ -2,16 +2,13 @@
 @use './utils/mixins' as *;
 @use './utils/variables' as *;
 
-:root {
-  /* Setup css variables */
-  @include set-colors-variables('c');
-  @include set-variables('spacer', $spacers);
-  @include set-variables('ff', $font-families);
-  @include set-variables('fs', $font-sizes);
-  @include set-variables('fw', $font-weights);
-  @include set-variables('tr', $transitions);
-
-}
+/* Setup css variables */
+@include set-variables('spacer', $spacers);
+@include set-variables('ff', $font-families);
+@include set-variables('fs', $font-sizes);
+@include set-variables('fw', $font-weights);
+@include set-variables('tr', $transitions);
+@include set-colors-variables('c');
 
 *,
 *::before,
