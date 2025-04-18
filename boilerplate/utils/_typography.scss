@@ -1,3 +1,5 @@
+@use 'SASS:map';
+
 // === Font families ===
 $font-families: (
   'serif': '"Playfair Display", Georgia, "Times New Roman", serif',
@@ -14,8 +16,6 @@ $font-weights: (
   '6': 600,
   '7': 700,
   '8': 800,
-  'normal': 400,
-  'bold': 700,
 );
 
 // === Font sizes ===
@@ -66,3 +66,17 @@ $title-sizes: (
     'ratio': 1.5vw,
   ),
 );
+
+// === Title size ===
+@mixin set-title-sizes() {
+  @each $level, $config in $title-sizes {
+    #{$level},
+    .#{$level} {
+      font-size: clamp(
+        #{map.get($config, 'min')},
+        #{map.get($config, 'ratio')},
+        #{map.get($config, 'max')}
+      );
+    }
+  }
+}

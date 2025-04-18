@@ -7,6 +7,7 @@
 @include set-variables('ff', $font-families);
 @include set-variables('fs', $font-sizes);
 @include set-variables('fw', $font-weights);
+@include set-variables('rd', $radius);
 @include set-variables('tr', $transitions);
 @include set-colors-variables('c');
 
