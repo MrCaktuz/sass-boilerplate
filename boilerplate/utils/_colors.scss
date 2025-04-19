@@ -3,15 +3,16 @@
 @use 'SASS:meta';
 
 // === Colors ===
-$c-white: #FFFFFF;
-$c-white-porcelain: #EDF0F2;
-$c-grey-regent: #879BA6;
-$c-grey-river-bed: #455C63;
-$c-grey-limed-spruce: #37474F;
+$c-white: #ffffff;
+$c-white-porcelain: #edf0f2;
+$c-grey-regent: #879ba6;
+$c-grey-river-bed: #455c63;
+$c-grey-limed-spruce: #37474f;
 $c-grey-outer-space: #263238;
 $c-black: #000000;
-$c-orange-ecstasy: #F58020;
-$c-blue-sail: #99DBF6;
+$c-orange-ecstasy: #f58020;
+$c-blue-sail: #99dbf6;
+
 // Utils
 $c-green-fun: #005f30;
 $c-green-jade: #00ad57;
@@ -69,6 +70,7 @@ $color-themes: (
 // === Color theme ===
 @mixin set-color-data($theme-name, $key) {
   color-scheme: #{$theme-name};
+
   @each $color-name, $color-values in $color-themes {
     --#{$key}-#{$color-name}: #{map.get($color-values, $theme-name)};
   }
@@ -78,30 +80,32 @@ $color-themes: (
   $first-color-name: list.nth(map.keys($color-themes), 1);
   $first-color-value: map.get($color-themes, $first-color-name);
 
-  @if meta.type-of($first-color-value) == "map" {
+  @if meta.type-of($first-color-value) == 'map' {
     $theme-list: map.keys($first-color-value);
     $first-theme: list.nth($theme-list, 1);
 
     @each $theme-name in $theme-list {
       @if $theme-name == $first-theme {
         :root,
-        [data-theme="#{$theme-name}"]:root {
+        [data-theme='#{$theme-name}']:root {
           @include set-color-data($theme-name, $key);
         }
       } @else {
-        [data-theme="#{$theme-name}"]:root {
+        [data-theme='#{$theme-name}']:root {
           @include set-color-data($theme-name, $key);
         }
+
         @media (prefers-color-scheme: #{$theme-name}) {
-          :root{
+          :root {
             @include set-color-data($theme-name, $key);
           }
         }
       }
     }
   } @else {
-    :root{
-      color-scheme: "default";
+    :root {
+      color-scheme: 'default';
+
       @each $color-name, $color-values in $color-themes {
         --#{$key}-#{$color-name}: #{$color-values};
       }

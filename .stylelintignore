@@ -1,4 +1,4 @@
 .vscode
 node_modules
 dist
-/boilerplate/_normalize.scss
+/boilerplate/utils/_normalize.scss

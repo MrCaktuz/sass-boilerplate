@@ -3,7 +3,7 @@
 
 // === Variables ===
 @mixin set-variables($key, $array) {
-  :root{
+  :root {
     @each $name, $value in $array {
       @if $name == 'base' {
         --#{$key}: #{$value};

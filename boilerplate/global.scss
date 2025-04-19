@@ -24,9 +24,9 @@
 }
 
 html {
-  color-scheme: light dark; /* Enable light & dark themes */
-  line-height: 1.5; /* Better readability */
   font-size: 62.5%; /* accessible 10px for easier REM values */
+  line-height: 1.5; /* Better readability */
+  color-scheme: light dark; /* Enable light & dark themes */
 }
 
 body {
@@ -87,14 +87,14 @@ ol {
   }
 }
 
-.srOnly {
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
+  border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  border: 0;
 }
